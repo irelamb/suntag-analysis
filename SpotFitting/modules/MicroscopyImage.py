@@ -113,17 +113,3 @@ class MicroscopyImage:
         #channels = img.attrib['Name'].split('/') # this is usually wrong
         
         return self.Metadata(dx, dy, nframes, dt, len(channels), channels)
-    
-               
-if __name__ == "__main__":
-    
-    PATH = "/Volumes/Naef-Lab/Irene/SunTag_svfas5"
-    
-    path2ome = join(PATH, "data/corrected/20230113/COL-H-GC7-1uM-24h_01", "COL-H-GC7-1uM-24h_20230113_01_s1_ff.tif")
-    
-    image = MicroscopyImage(path2ome)
-    
-    print(image.properties)
-    
-    io.imshow(image[10,1,:,:]) # dimensions : time, channel, y, x 
-        
