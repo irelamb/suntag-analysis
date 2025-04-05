@@ -10,7 +10,7 @@
 #SBATCH --mem 20G
 #SBATCH --array=0-N_FILES
 
-# In this version PATH_IN and N_FILES are just "placeholders" that will be substituted by the input path and the number of files in the input path, respectively, by a bash script. 
+# In this version PATH_IN, PATH_ENV and N_FILES are just "placeholders" that will be substituted by the input path and the number of files in the input path, respectively, by a bash script. 
 
 # ----------------- #
 dx=0.2752 # microns
