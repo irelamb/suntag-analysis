@@ -1,2 +1,2 @@
 # suntag-analysis
-Extraction and analysis of SunTag traces, starting from the time-lapse microscopy data and the spatial trace annotations (obtained with TrackMate).
+Extraction and analysis of SunTag traces, starting from time-lapse microscopy data and spatial trace annotations (obtained with TrackMate).
