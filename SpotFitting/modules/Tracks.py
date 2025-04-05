@@ -94,18 +94,3 @@ class Tracks:
                 missing_frames = track.index[missing]
         
         print("Done!")          
-            
-                
-            
-
-
-if __name__ == "__main__":
-    
-    PATH = "/Volumes/Irene/SunTag_svfas5"
-    
-    path_to_tracks = join(PATH, "results/tracking/20210401/REN-N-02", "REN-N_20210401_02_Cy5_bgsub_Cy5_Spots_v1.csv")
-    
-    tracks = Tracks(path_to_tracks)
-    
-    print(tracks[104])
-    print(tracks.IDs)
