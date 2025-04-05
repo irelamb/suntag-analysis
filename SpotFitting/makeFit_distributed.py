@@ -17,17 +17,19 @@ Created on Tue Jun 15 17:29:07 2021
 8) use the outer pixels to compute both the mean and the standard deviation of the i0 prior.
 """
 
-#from params import workingdir, homedir, model_name, \
-#    cmap, cyto_avg, cyto_std
+from os.path import join
+import os
 
-homedir = "/home/ilambert/SunTag"
-workingdir = "/scratch/ilambert/SunTag/"
+filedir = __file__
+workingdir = join(filedir, "results/") # directory where results will be saved
+if not os.path.exists(workingdir): # create directory if it does not exist
+    os.mkdir(workingdir)
 
 channels = ["sdcGFPquad", "sdcCy5quad"] # channels names
 cmap = ["Greens_r", "Reds_r"] # colors for plotting
        
 import sys
-sys.path.append(homedir) # necessary to import the modules
+sys.path.append(filedir) # necessary to import the modules
 
 # Import Image and Track modules
 from modules.MicroscopyImage import MicroscopyImage
@@ -53,8 +55,6 @@ import matplotlib
 import matplotlib.pyplot as plt
 matplotlib.use('agg')
 
-from os.path import join
-import os
 from sys import argv
 
 import multiprocessing as mp
