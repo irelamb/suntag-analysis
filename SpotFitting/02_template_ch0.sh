@@ -28,7 +28,7 @@ file_names=($(ls $path)) # file names of input images (either .tif or .ome.tif)
 
 file_name=${file_names[${SLURM_ARRAY_TASK_ID}]}
 
-source activate /home/ilambert/miniconda3/envs/microscopy_analysis 
+source activate "PATH_ENV"
 
 python3 main/makeFit_distributed.py $file_name "0" $model_name $dx $dy $dt # channel 0
 #python3 main/makeFit_distributed_4calibration.py $file_name "0" $chan0_avg $chan0_std $model_name $dx $dy $dt # channel 0
