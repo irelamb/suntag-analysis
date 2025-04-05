@@ -20,10 +20,14 @@ Created on Tue Jun 15 17:29:07 2021
 from os.path import join
 import os
 
+
+## Define results directory (workingdir)
 filedir = __file__
 workingdir = join(filedir, "results/") # directory where results will be saved
 if not os.path.exists(workingdir): # create directory if it does not exist
     os.mkdir(workingdir)
+#
+
 
 channels = ["sdcGFPquad", "sdcCy5quad"] # channels names
 cmap = ["Greens_r", "Reds_r"] # colors for plotting
