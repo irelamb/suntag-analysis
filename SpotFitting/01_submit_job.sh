@@ -24,5 +24,7 @@ sed -i "s/N_FILES/$(($n_files-1))/" 03_slurm_ch1.sh
 sed -i "s#JOB_NAME#$job_name#" 03_slurm_ch1.sh
 sed -i "s#MODEL_NAME#$model_name#" 03_slurm_ch1.sh
 
+
+# run
 sbatch --qos=serial 03_slurm_ch0.sh
 sbatch --qos=serial 03_slurm_ch1.sh
