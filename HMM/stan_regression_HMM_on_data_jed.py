@@ -39,9 +39,13 @@ import pickle
 
 from sys import argv
 
-homedir = "/home/ilambert/SunTag_HMM"
-workingdir = "/scratch/ilambert/SunTag_HMM"
-inputdir = "/scratch/ilambert/SunTag/Results"
+homedir = __file__ # where the compiled models (.stan) will be saved
+
+## to be modified by the users
+workingdir = "path_to_results" # where the inference results will be saved
+inputdir = "path_to_JSON_input_file"
+#####
+
 
 from time import time
 
@@ -111,17 +115,15 @@ if __name__ == '__main__':
     #----- Compile the model and fit ------#
     
     start = time()
-    compiled_model = CmdStanModel(stan_file = join(homedir, 'main/{}.stan'.format(HMM_model_name)))#, force_compile = True)
+    compiled_model = CmdStanModel(stan_file = join(homedir, '{}.stan'.format(HMM_model_name)))#, force_compile = True)
     FIT = compiled_model.sample(data = data, chains = 2, parallel_chains = 2)
-    #compiled_model = stan.build(models[HMM_model_name], data, random_seed = 1)
-    #FIT = compiled_model.sample(num_chains = n_chains, num_samples = n_samples) # init arguments: provides initial values to the sampler
     end = time()
     print("model took ", end-start)
 
     #----- Save fit ------#
     
     # save the fit
-    file = join(workingdir, "FittedModels/{}_{}_N{}_b0{}_s0{}_u{}_step{}.pkl".format(HMM_model_name, data_file[: -5], N_max, b0, sigma0, u,  max_step_size))
+    file = join(workingdir, "{}_{}_N{}_b0{}_s0{}_u{}_step{}.pkl".format(HMM_model_name, data_file[: -5], N_max, b0, sigma0, u,  max_step_size))
     with open(file, "wb") as f:
         pickle.dump({'model' : compiled_model, 'fit' : FIT}, f, protocol=-1)
     print("model saved as ", file)
