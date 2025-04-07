@@ -115,7 +115,7 @@ if __name__ == '__main__':
     #----- Compile the model and fit ------#
     
     start = time()
-    compiled_model = CmdStanModel(stan_file = join(homedir, '{}.stan'.format(HMM_model_name)))#, force_compile = True)
+    compiled_model = CmdStanModel(stan_file = join(homedir, 'models/{}.stan'.format(HMM_model_name)))#, force_compile = True)
     FIT = compiled_model.sample(data = data, chains = 2, parallel_chains = 2)
     end = time()
     print("model took ", end-start)
