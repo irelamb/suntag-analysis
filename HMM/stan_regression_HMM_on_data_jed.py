@@ -96,7 +96,7 @@ if __name__ == '__main__':
     u = 14.0 # from calibration experiments
 
 
-    json_file = join(workingdir, "Data", data_file)
+    json_file = join(inputdir, data_file)
     with open(json_file) as f:
         data = json.load(f)
     
