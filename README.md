@@ -17,3 +17,6 @@ Output:
 To run on a server in a distributed way (multiple acquisitions):
 
 `bash 01_submit_job.sh`
+
+## 2) SaveDataAsJSON
+Jupyter notebook that merges the files containing the trace intensities into one unique JSON file that will be the input of Bayesian inference.
