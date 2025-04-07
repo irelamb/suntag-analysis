@@ -26,8 +26,14 @@ Bayesian inference with Hidden Markov Model (HMM)
 
 **Input**  
 
-JSON file contaning the GFP intensity traces
+- JSON file contaning the GFP intensity traces for control and perturbed conditions
+- Stan model (`.stan`)
 
 **Output** 
 
-.pkl file containing the inferred model parameters
+`.pkl` file containing the inferred model parameters
+
+Two different models can be used 
+
+- `RB2_Sigma_time.stan`: models where the mature protein intensity (`u`) is a model parameter
+- `RB2_Sigma_time_uFixed.stan` : model where the mature protein intensity is a fixed parameter, given as input 
