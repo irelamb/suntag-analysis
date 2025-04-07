@@ -19,9 +19,12 @@ To run on a server in a distributed way (multiple acquisitions):
 `bash 01_submit_job.sh`
 
 ## 2) SaveDataAsJSON
-Jupyter notebook that merges the files containing the trace intensities into one unique JSON file that will be the input of Bayesian inference.
+Merging files containing the trace intensities into one unique JSON file that will be the input of Bayesian inference.
 
-## 3) HMM
+## 3) EstimateNoise
+Estimating the noise from untranslated traces. This parameter will be used as input in the HMM.
+
+## 4) HMM
 Bayesian inference with Hidden Markov Model (HMM)
 
 **Input**  
