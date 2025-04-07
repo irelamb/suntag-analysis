@@ -4,7 +4,7 @@ Extraction and analysis of SunTag traces, starting from time-lapse microscopy da
 ## 1) SpotFitting
 Bayesian inference of the spot intensity for each trace.
 
-**Input data**
+**Input**
     
 - time-lapse image
     
@@ -24,6 +24,10 @@ Jupyter notebook that merges the files containing the trace intensities into one
 ## 3) HMM
 Bayesian inference with Hidden Markov Model (HMM)
 
-**Input data**  JSON file contaning the GFP intensity traces
+**Input**  
 
-**Output data** .pkl file containing the inferred model parameters
+JSON file contaning the GFP intensity traces
+
+**Output** 
+
+.pkl file containing the inferred model parameters
