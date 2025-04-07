@@ -53,42 +53,6 @@ def smooth(y, w, mean=True):
     
     return res
 
-#%%
-
-# def _where_spot_is_lost(yg, yr):
-    
-#     mask = yg < 50
-#     xg = np.arange(len(yg))[mask]
-    
-    
-#     m = np.nanmean(yr)
-#     mask = yr < 0.6 * m
-#     xr = np.arange(len(yr))[mask]
-    
-#     res = np.array([x for x in xg if x in xr])
-
-#     return res
-
-
-# ###
-# def correct_for_spot_loss(yg, yr):
-    
-#     mask = ~np.isnan(yg)
-    
-#     yg_nonan = yg[mask]
-#     yr_nonan = yr[mask]
-    
-#     yg_corr = yg_nonan.copy()
-            
-#     i_lost = _where_spot_is_lost(yg_nonan, yr_nonan)
-#     if len(i_lost) > 0:
-#         yg_corr[i_lost] = [np.nan]*len(i_lost)
-#         yg_corr = pd.Series(yg_corr).interpolate()
-    
-#     res = np.full(yg.shape, np.nan)
-#     res[mask] = yg_corr
-    
-#     return res
 
 def _butter_lowpass_filter(data, cutoff, fs = 1/20, order = 2):
     """
