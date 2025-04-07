@@ -13,3 +13,7 @@ Input data:
 Output:
 
 - csv file for each trace and channel, containing the intensity of each spot.
+
+To run on a server in a distributed way (multiple acquisitions):
+
+bash 01_submit_job.sh
