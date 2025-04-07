@@ -129,37 +129,6 @@ def get_unique_IDs(files):
         
     return np.array(unique_IDs)
 
-
-# def get_values(files, nframes, column='I (au)'):
-    
-#     """
-#     Function returning a ndarray of dimensions (len(files), nframes)
-#     containing the values of column (default intensity).
-#     """
-    
-#     res = np.full( (len(files), nframes), np.nan )
-    
-#     for n, file in enumerate(files):
-        
-#         try:
-#             df = pd.read_csv(file, index_col=0)
-#         except FileNotFoundError as e:
-#             print(e)
-#             continue
-        
-#         y = df[column].to_numpy()
-#         # time
-#         t = df["time (s)"].to_numpy()
-#         dt = t[1]-t[0]
-#         index = (t//dt).astype(int)
-        
-#         #
-        
-#         res[n][index] = y
-    
-#     return res
-
-
 ####
 
 
