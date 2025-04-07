@@ -1,7 +1,7 @@
 # suntag-analysis
 Extraction and analysis of SunTag traces, starting from time-lapse microscopy data and spatial trace annotations (obtained with TrackMate).
 
-1) SpotFitting
+## 1) SpotFitting
 Bayesian inference of the spot intensity for each trace.
 
 Input data:
@@ -16,4 +16,4 @@ Output:
 
 To run on a server in a distributed way (multiple acquisitions):
 
-bash 01_submit_job.sh
+`bash 01_submit_job.sh`
